@@ -1,0 +1,81 @@
+/* *,
+::after,
+::before{
+ box-sizing: border-box;
+}
+
+body{
+ font-family: arial;
+}
+
+label{
+ display: block;
+} 
+
+/* input{
+  padding: 8px;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 1em;
+  padding-right: 25px;
+  border-radius: 2px;
+  border: 1px solid #E0E0E0;
+  outline: none;
+}*/
+
+.form-container{
+  position: relative;
+  width: 300px;
+  margin-top: 4px;
+
+} 
+
+.icon-left {
+  /* position: absolute; */
+  top: 37px;
+  right: 10px;
+  display: none;
+}
+
+button{
+  padding: 8px 18px;
+  border-radius: 4px;
+  border: 0;
+  color: #ffffff;
+  background:#1E88E5;
+}
+
+input:focus:invalid ~ .msj::after{
+    background: red;
+    padding: 4px;
+    border-radius: 4px;
+    color: #ffffff;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+input[type="text"]:focus:invalid ~ .msj::after{
+    content: 'Ingrese sólo texto';
+}
+
+input[type="email"]:focus:invalid ~ .msj::after{
+    content: 'Ingrese un correo válido';
+}
+
+input[type="number"]:focus:invalid ~ .msj::after{
+    content: 'Ingrese sólo números';
+}
+
+input[type="text2"]:focus:invalid ~ .msj::after{
+  content: 'Ingrese letras mayúsculas,minúsculas,números';
+}
+
+input[type="password"]:focus:invalid ~ .msj::after{
+  content: 'Ingrese letras mayúsculas,minúsculas,números,caracteres';
+}
+
+input:valid + .icon-left{
+    color: green;
+    display: block;
+}
